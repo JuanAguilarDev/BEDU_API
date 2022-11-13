@@ -1,8 +1,9 @@
 const { DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/db');
-const Group = require('./group')
+const Group = require('./group');
+const User = require('./user');
 
-const Subject = sequelize.define('grades', {
+const Subject = sequelize.define('subjects', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     groupId: {
         type: Sequelize.INTEGER,
@@ -35,6 +36,7 @@ const Subject = sequelize.define('grades', {
         },
     },
 });
+
 
 Subject.belongsTo(Group);
 

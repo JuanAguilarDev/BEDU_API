@@ -35,7 +35,6 @@ const Grade = sequelize.define('grades', {
         },
     },
 });
-Grade.belongsTo(Subject);
-Grade.belongsTo(User);
+
 
 module.exports = Grade;

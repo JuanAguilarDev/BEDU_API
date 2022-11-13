@@ -19,6 +19,5 @@ const Group = sequelize.define('groups', {
     },
 });
 
-Group.hasMany(Subject);
 
 module.exports = Group;

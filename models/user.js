@@ -2,6 +2,7 @@ const { DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/db');
 const bcrypt = require('bcrypt');
 const Grade = require('./grade');
+const Subject = require('./subject');
 
 const User = sequelize.define('users', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
@@ -27,5 +28,6 @@ User.prototype.validPassword = function(password) {
 }
 
 User.hasMany(Grade);
+User.hasMany(Subject);
 
 module.exports = User;
