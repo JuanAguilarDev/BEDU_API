@@ -1,0 +1,22 @@
+{
+  "name": "bedu_api",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanAguilarDev/BEDU_API.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Juan Aguilar, Alexis Alarcon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanAguilarDev/BEDU_API/issues"
+  },
+  "homepage": "https://github.com/JuanAguilarDev/BEDU_API#readme"
+}
