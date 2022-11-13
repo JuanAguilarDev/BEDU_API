@@ -3,12 +3,12 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('grades', {
+    await queryInterface.createTable('subjects', {
       id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-      SubjectId: {
+      groupId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'subjects',
+          model: 'groups',
           key: 'id'
         },
         onDelete: 'CASCADE' // Allows delete on cascade
@@ -21,13 +21,14 @@ module.exports = {
         },
         onDelete: 'CASCADE' // Allows delete on cascade
       },
-      mark: { type: Sequelize.DOUBLE, allowNull: false },
+      name: { type: Sequelize.STRING, allowNull: false },
+      credits: { type: Sequelize.DOUBLE, allowNull: false },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
     })
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('grades');
+    await queryInterface.dropTable('subjects');
   }
 };
