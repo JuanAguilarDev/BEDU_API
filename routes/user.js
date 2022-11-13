@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const permission = require('../middlewares/permission');
 
 const {
     createUser,
@@ -9,8 +10,8 @@ const {
 
 
 router.get('/', getUser);
-router.post('/', createUser);
-router.put('/:id', updateUser);
-router.delete('/:id', deleteUser);
+router.post('/', permission('admin'), createUser);
+router.put('/:id', permission('admin'), updateUser);
+router.delete('/:id', permission('admin'), deleteUser);
 
 module.exports = router;

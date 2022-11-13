@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const permission = require('../middlewares/permission');
 
 const {
     createGrade,
@@ -8,8 +9,8 @@ const {
 } = require('../controllers/grade');
 
 router.get('/', getGrade);
-router.post('/', createGrade);
-router.put('/:id', updateGrade);
-router.delete('/:id', deleteGrade);
+router.post('/', permission('teacher'), createGrade);
+router.put('/:id', permission('teacher'), updateGrade);
+router.delete('/:id', permission('teacher'), deleteGrade);
 
 module.exports = router;
