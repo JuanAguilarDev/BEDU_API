@@ -37,7 +37,7 @@ const Subject = sequelize.define('subjects', {
     },
 });
 
-
 Subject.belongsTo(Group);
+
 
 module.exports = Subject;

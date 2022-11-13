@@ -17,11 +17,7 @@ const createSubject = async (req, res) => {
 const getSubject = async (req, res) => {
     const { id } = req.params;
     return await Subject.findOne({
-        where: { id },
-        include: [
-            {model: User},
-            { model: Group },
-        ]
+        where: { id }
     })
         .then(subject => {
             res.status(200).json(subject);
