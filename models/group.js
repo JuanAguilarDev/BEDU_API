@@ -1,5 +1,6 @@
 const { DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/db');
+const Subject = require('./subject');
 
 const Group = sequelize.define('groups', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
@@ -18,6 +19,6 @@ const Group = sequelize.define('groups', {
     },
 });
 
-
+Group.hasMany(Subject);
 
 module.exports = Group;
