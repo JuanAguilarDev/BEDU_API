@@ -4,6 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('subjects', {
+      id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
       GroupId: {
         type: Sequelize.INTEGER,
         references: {
