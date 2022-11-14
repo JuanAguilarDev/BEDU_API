@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 router.use('/grade', authenticate, grade);
 router.use('/subject', authenticate, subject);
 router.use('/group', authenticate, group);
-router.use('/user', authenticate, user);
+router.use('/user', user);
 router.use('/auth', auth);
 
 
