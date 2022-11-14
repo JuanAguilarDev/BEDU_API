@@ -11,6 +11,14 @@ const User = sequelize.define('users', {
     rol: { type: Sequelize.STRING },
     email: { type: Sequelize.STRING, allowNull: false, unique: true },
     password: { type: Sequelize.STRING, allowNull: false },
+    groupId: {
+        type: Sequelize.INTEGER,
+        references: {
+            model: 'groups',
+            key: 'id'
+        },
+        onDelete: 'CASCADE' // Allows delete on cascade
+    },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
 }, {
